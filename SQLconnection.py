@@ -3,12 +3,17 @@ import psycopg2.extras
 import os
 from flask import request, jsonify
 import traceback
+from dotenv import load_dotenv
+import os
 
+# Load environment variables from .env file
+load_dotenv()
 
-DB_NAME = os.environ['DB_NAME']
-USER_PASSWORD = os.environ['USER_PASSWORD']
-USERNAME = os.environ['USERNAME']
-DB_HOST = os.environ['DB_HOST']
+# Access environment variables
+DB_NAME = os.getenv('DB_NAME')
+USER_PASSWORD = os.getenv('USER_PASSWORD')
+USERNAME = os.getenv('USERNAME')
+DB_HOST = os.getenv('DB_HOST')
 
 def get_db_connection():
     conn = psycopg2.connect(

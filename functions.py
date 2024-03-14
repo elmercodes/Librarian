@@ -3,8 +3,12 @@ import requests
 import os
 from openai import OpenAI
 from prompts import formatter_prompt, assistant_instructions, inventory_prompt
+from dotenv import load_dotenv
 
-OPENAI_API_KEY = os.environ['OPENAI_API_KEY']
+# Load environment variables from .env file
+load_dotenv()
+
+OPENAI_API_KEY = os.getenv['OPENAI_API_KEY']
 
 # Init OpenAI Client
 client = OpenAI(api_key=OPENAI_API_KEY)
