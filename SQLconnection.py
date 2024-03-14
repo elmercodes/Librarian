@@ -28,11 +28,11 @@ def get_db_connection():
 
 def get_db_connection():
     conn = psycopg2.connect(
-        host="database-16.c5e48wk2m6pz.us-east-1.rds.amazonaws.com",
+        host="host",
         port=5432,
-        dbname="demo-bookstore",
-        user="postgres",
-        password="660616Ef"
+        dbname="database_name",
+        user="db_username",
+        password="db_password"
     )
     return conn
 
